@@ -8,12 +8,12 @@ export class UserService {
 
     create(item){
         this.data.push(item);
-        return this.data;
+        return {items:this.data};
     }
 
     delete(id){
         this.data = this.data.filter((data)=> data.id !== id)
-        return "Success"
+        return {items:"Success"}
     }
 
     update(id, data){
@@ -23,16 +23,16 @@ export class UserService {
             }
         }
 
-        return this.data;
+        return {items:this.data};
     }
 
     findAll(){
-        return this.data;
+        return {items:this.data};
     }
 
     findById(id){
         let out = this.data.filter((el)=> el.id === id);
-        return out;
+        return {items: out};
     }
 
 }
